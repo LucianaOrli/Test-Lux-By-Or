@@ -1,10 +1,12 @@
-🐒 Smart Monkey & Fuzzing Framework: Lux-By-Or
+🐒 **Smart Monkey & Fuzzing Framework: Lux-By-Or**
 Integrity, Resiliency & Security Validation
 
 
 💡 Este projeto não é apenas um gerador de dados aleatórios. Ele foi concebido sob os princípios de segurança por design e resiliência de sistemas, aplicando conceitos de Monkey Testing inteligente para identificar falhas de borda, vazamentos de memória e vulnerabilidades de entrada que testes convencionais (felizes) costumam ignorar.
 
-O objetivo é simples: quebrar o sistema em ambiente controlado para que ele nunca quebre em produção.
+
+***O objetivo é simples: quebrar o sistema em ambiente controlado para que ele nunca quebre em produção***.
+
 
 🛠️ Módulos e Funcionalidades
 O framework é dividido em núcleos de especialidade para garantir a separação de responsabilidades:
@@ -16,6 +18,7 @@ Mathematical Validation: Algoritmos focados na integridade de dados e verificaç
 Compliance & Security: Mapeamento de logs e tratamento de dados sensíveis seguindo diretrizes da ISO 27001.
 
 MIME/Flow Resilience: Verificação rigorosa de tipos de arquivos e resistência a requisições simultâneas.
+
 
 🚀 Como este Teste Agrega Valor
 Redução de Risco: Identifica comportamentos inesperados em tipos de dados não tratados.
@@ -35,3 +38,10 @@ cd Smart-Monkey-Test-Lux-By-Or
 python orchestrator.py
 
 🔧 Instalação e Uso
+
+
+🚀 Valor Agregado ao Ciclo de QA
+
+Mitigação de Risco: Descoberta proativa de exceções em tipos de dados não tratados.
+Hardening de Segurança: Prevenção de injeções e garantia de sanitização de inputs.
+Rastreabilidade: Estrutura de logs pensada para auditoria técnica e conformidade.
