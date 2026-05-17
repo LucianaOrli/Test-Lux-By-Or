@@ -1,5 +1,14 @@
+# Ambientes virtuais e caches locais
+.venv/
+venv/
+ENV/
 __pycache__/
 *.pyc
-.DS_Store
-venv/
-.env
+
+# Ignorar pastas geradas por engano na raiz
+/random/
+/string/
+/time/
+/pytest/
+/uuid/
+.pytest_cache/
