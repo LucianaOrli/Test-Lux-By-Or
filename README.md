@@ -1,6 +1,6 @@
  # 🤖 Projeto LuxBYOr: Automação e Observabilidade para Assistente de IA Bancário
 
-##  Visão Geral
+  Visão Geral
 Este projeto implementa uma estratégia de automação para validação de um Assistente de IA Bancário baseado em RAG (Retrieval-Augmented Generation).
 
 A solução foi desenvolvida utilizando BDD (Behavior-Driven Development) com Gherkin, Python e Behave, incorporando mecanismos de avaliação automática da qualidade das respostas e observabilidade através do Langfuse.
@@ -9,7 +9,7 @@ Não é apenas verificar se uma resposta foi retornada, mas avaliar se ela é co
 
 ---
 
-## 🎯 Objetivo
+# 🎯 Objetivo
 A suíte de testes foi construída para validar:
 * Precisão das informações fornecidas pela IA.
 * Fidelidade das respostas baseadas em rúbrica matemática.
@@ -43,15 +43,18 @@ A suíte de testes foi construída para validar:
 ├── requirements.txt         # Dependências Python
 └── README.md                # Este arquivo
 
- Tecnologias Utilizadas
+Tecnologias Utilizadas
+Python 3.8+: Linguagem principal e pip (gerenciador de pacotes Python)
 
- **Python 3.8+**: Linguagem principal pip (gerenciador de pacotes Python)
- **Behave**: Framework BDD para Python
- **Gherkin**: Linguagem para definição de cenários
- **Langfuse**: Plataforma de observabilidade para LLMs
- **python-dotenv**: Gerenciamento de variáveis de ambiente
+Behave: Framework BDD para Python
 
-⚙️ Arquitetura da Solução
+Gherkin: Linguagem para definição de cenários
+
+Langfuse: Plataforma de observabilidade para LLMs
+
+python-dotenv: Gerenciamento de variáveis de ambiente
+
+## ⚙️ Arquitetura da Solução
 
 | Camada | Tecnologia | Responsabilidade |
 | :--- | :--- | :--- |
@@ -60,6 +63,8 @@ A suíte de testes foi construída para validar:
 | **Core Engine** | Python 3 | Algoritmo de validação e parse de dados. |
 | **Observabilidade** | Langfuse SDK | Captura de traces em tempo real. |
 | **Data Source** | Base RAG Local | Fonte de dados do assistente (`manual_banco.txt`). |
+
+
 
 
  Executar suíte completa
