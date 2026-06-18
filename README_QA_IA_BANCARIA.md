@@ -1,4 +1,4 @@
-# Projeto de Automação QA Sênior - Assistente de IA Bancário
+# Projeto de Automação Assistente de IA Bancário
 
 Este projeto implementa uma suite de testes automatizados para validar um Assistente de IA Bancário usando Gherkin (BDD), Playwright, Langfuse e uma rúbrica matemática de fidelidade (faithfulness).
 
@@ -9,7 +9,7 @@ Este projeto implementa uma suite de testes automatizados para validar um Assist
 ├── manual_banco.txt              # Base de conhecimento RAG para a IA
 ├── requirements.txt              # Dependências Python
 ├── features/
-│   ├── ia_bancaria.feature       # Cenários Gherkin em português
+│   ├── ia_bancaria.feature       # Cenários Gherkin
 │   ├── steps.py                  # Implementação dos steps com Playwright e Langfuse
 │   └── conftest.py               # Configuração do Behave
 └── README_QA_IA_BANCARIA.md      # Este arquivo
@@ -26,76 +26,7 @@ Validar se o Assistente de IA Bancário responde corretamente sobre saldos e inf
 - **Langfuse**: SDK para tracing e monitoramento de LLM
 - **Python 3.8+**: Linguagem de programação
 
-## 📦 Instalação
 
-### 1. Criar ambiente virtual (recomendado)
-
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# ou
-venv\Scripts\activate  # Windows
-```
-
-### 2. Instalar dependências
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Instalar browsers do Playwright
-
-```bash
-playwright install chromium
-```
-
-## 🔧 Configuração
-
-### Variáveis de Ambiente (Opcional)
-
-Crie um arquivo `.env` ou exporte as variáveis:
-
-```bash
-export LANGFUSE_PUBLIC_KEY="sua-chave-publica"
-export LANGFUSE_SECRET_KEY="sua-chave-secreta"
-export LANGFUSE_HOST="https://cloud.langfuse.com"
-```
-
-**Nota**: Se não configurar, o projeto usará valores padrão e simulará as respostas da IA.
-
-## 🏃 Executar os Testes
-
-### Executar todos os cenários
-
-```bash
-behave
-```
-
-### Executar cenário específico
-
-```bash
-behave features/ia_bancaria.feature:5
-```
-
-### Executar com formato específico
-
-```bash
-behave --format=pretty
-behave --format=json
-behave --format=html
-```
-
-### Executar em modo headless (padrão)
-
-```bash
-behave
-```
-
-### Executar com browser visível (para debug)
-
-Edite o arquivo `features/steps.py` e altere:
-```python
-browser = context_data["playwright"].chromium.launch(headless=False)
 ```
 
 ## 📊 Rúbrica de Fidelidade (Faithfulness)
@@ -136,47 +67,6 @@ Todos os testes registram traces no Langfuse com:
 - Nome do cenário
 - Tipo de teste
 
-Para visualizar os traces, acesse seu dashboard no Langfuse.
-
-## 🧪 Simulação vs Produção
-
-O projeto está configurado em modo de simulação por padrão. Para usar com uma IA real:
-
-1. Substitua a função `simular_resposta_ia()` em `features/steps.py` por chamadas reais à API da sua LLM
-2. Configure as credenciais corretas do Langfuse
-3. Atualize a URL da aplicação bancária nos steps
-
-## 📂 Arquivo manual_banco.txt
-
-Este arquivo contém a base de conhecimento RAG usada pela IA, incluindo:
-- Informações de contas e saldos
-- Tarifas e taxas
-- Limites de transferência
-- Informações de cartão de crédito
-- Histórico de transações
-- Empréstimos e financiamentos
-- Políticas do banco
-
-## 🐛 Debug
-
-### Ver logs detalhados
-
-```bash
-behave -v
-behave --no-capture
-```
-
-### Executar com breakpoint
-
-Adicione `import pdb; pdb.set_trace()` no step desejado.
-
-### Verificar instalação
-
-```bash
-python -c "import playwright; print(playwright.__version__)"
-python -c "import langfuse; print(langfuse.__version__)"
-python -c "import behave; print(behave.__version__)"
-```
 
 ## 📈 Relatórios
 
@@ -195,32 +85,9 @@ behave -f json -o reports/report.json
 
 ## 🔐 Segurança
 
-- Nunca commit credenciais reais no código
-- Use variáveis de ambiente para chaves de API
-- O arquivo `.env` deve estar no `.gitignore`
+- Credenciais e chaves privadas de API são consumidas estritamente via variáveis de ambiente.
+- O arquivo de configuração local (`.env`) encontra-se devidamente mapeado no `.gitignore`.
 
-## 🤝 Contribuindo
-
-1. Adicione novos cenários no arquivo `features/ia_bancaria.feature`
-2. Implemente os steps correspondentes em `features/steps.py`
-3. Atualize o `manual_banco.txt` se necessário
-4. Execute os testes para validar
-
-## 📞 Suporte
-
-Para dúvidas ou problemas:
-- Verifique a documentação do [Behave](https://behave.readthedocs.io/)
-- Verifique a documentação do [Playwright](https://playwright.dev/python/)
-- Verifique a documentação do [Langfuse](https://langfuse.com/docs)
-
-## ✅ Checklist antes de rodar
-
-- [ ] Python 3.8+ instalado
-- [ ] Ambiente virtual criado e ativado
-- [ ] Dependências instaladas (`pip install -r requirements.txt`)
-- [ ] Playwright browsers instalados (`playwright install chromium`)
-- [ ] Arquivo `manual_banco.txt` presente
-- [ ] Variáveis de ambiente configuradas (opcional)
 
 ## 🎉 Exemplo de Execução
 
@@ -251,6 +118,4 @@ $ behave
 ======================================================================
 ```
 
-## 📄 Licença
 
-Este projeto é para fins educacionais e de demonstração.
