@@ -20,13 +20,14 @@ Não é apenas verificar se uma resposta foi retornada, mas avaliar se ela é co
 
 Estrutura do Projeto
 
+
 .
 ├── .github/                 # Configurações do GitHub (CI/CD, Issues)
 ├── docs/                    # Documentação e evidências
 │   ├── evidencias/          # Evidências de testes (screenshots, logs)
 │   └── relatorios/          # Relatórios de execução
 ├── features/                # Arquivos Gherkin (.feature)
-│   ├── ia_bancaria.feature  # Cenários de teste em português
+│   ├── ia_bancaria.feature  # Cenários de teste
 │   └── steps/               # Implementação dos steps
 │       ├── steps.py         # Lógica dos steps em Python
 │       └── __init__.py
@@ -39,6 +40,7 @@ Estrutura do Projeto
 ├── manual_banco.txt         # Base de conhecimento RAG
 ├── requirements.txt         # Dependências Python
 └── README.md                # Este arquivo
+
 
  Tecnologias Utilizadas
 
