@@ -1,12 +1,14 @@
-# Dependências para automação de QA Sênior - Assistente de IA Bancário
 # Framework BDD (Gherkin)
-behave==1.2.7
+behave==1.2.6
 
-# Langfuse para tracing e monitoramento de LLM
-langfuse==2.30.0
+# Automação Web para Interação com a Interface da IA
+playwright==1.49.0
 
-# Bibliotecas auxiliares
+# Langfuse para Tracing e Monitoramento de LLM
+langfuse==2.57.2
+
+# Gerenciamento de Variáveis de Ambiente (.env)
 python-dotenv==1.0.1
 
-# Para processamento de texto e regex (já incluído no Python padrão)
-# re - módulo padrão
+# Formatador Avançado para Relatórios HTML de QA
+behave-html-formatter==0.5.3
