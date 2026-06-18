@@ -2,8 +2,12 @@
 .venv/
 venv/
 ENV/
+env/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
 
 # Ignorar pastas geradas por engano na raiz
 /random/
@@ -12,3 +16,29 @@ __pycache__/
 /pytest/
 /uuid/
 .pytest_cache/
+
+# Variáveis de ambiente
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Relatórios e logs (opcional - comente se quiser versionar)
+# reports/
+# .behave/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Playwright (se usado no futuro)
+.playwright/
+test-results/

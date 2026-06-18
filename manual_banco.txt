@@ -1,0 +1,124 @@
+MANUAL DO SISTEMA BANCÁRIO - BANCO DIGITAL
+
+========================================
+INFORMAÇÕES DE CONTAS E SALDOS
+========================================
+
+CONTA CORRENTE - CLIENTE: João Silva
+- Número da Conta: 12345-6
+- Agência: 0001
+- Saldo Atual: R$ 5.450,00
+- Limite de Cheque Especial: R$ 2.000,00
+- Saldo Disponível (com limite): R$ 7.450,00
+
+CONTA POUPANÇA - CLIENTE: João Silva
+- Número da Conta: 54321-0
+- Agência: 0001
+- Saldo Atual: R$ 12.300,00
+- Rendimento Mensal: 0,5% ao mês
+
+CONTA INVESTIMENTO - CLIENTE: João Silva
+- Número da Conta: 98765-4
+- Agência: 0001
+- Saldo Atual: R$ 25.000,00
+- Tipo: CDB Liquidez Diária
+- Rentabilidade: 100% do CDI
+
+========================================
+TARIFAS E TAXAS
+========================================
+
+- Tarifa de Manutenção de Conta: R$ 0,00 (isento)
+- Saque em caixa eletrônico: R$ 0,00 (isento)
+- Transferência PIX: R$ 0,00 (isento)
+- Transferência TED: R$ 10,00
+- Transferência DOC: R$ 15,00
+- Pagamento de Boletos: R$ 0,00 (isento)
+- Emissão de 2ª via de cartão: R$ 25,00
+
+========================================
+LIMITES DE TRANSFERÊNCIA
+========================================
+
+- Limite diário PIX: R$ 5.000,00
+- Limite diário TED: R$ 10.000,00
+- Limite diário DOC: R$ 5.000,00
+- Limite de saque em caixa: R$ 2.000,00 por operação
+
+========================================
+INFORMAÇÕES DE CARTÃO DE CRÉDITO
+========================================
+
+CARTÃO VISA PLATINUM - CLIENTE: João Silva
+- Número: **** **** **** 1234
+- Limite Disponível: R$ 15.000,00
+- Fatura Atual: R$ 3.450,00
+- Data de Vencimento: 15/06/2026
+- Limite Total: R$ 18.450,00
+
+========================================
+HISTÓRICO DE TRANSAÇÕES RECENTES
+========================================
+
+10/06/2026 - Salário Creditado: R$ 5.500,00
+08/06/2026 - Transferência PIX Recebida: R$ 500,00
+07/06/2026 - Pagamento de Conta de Luz: R$ 250,00
+05/06/2026 - Saque em Caixa Eletrônico: R$ 500,00
+03/06/2026 - Compra no Supermercado: R$ 450,00
+01/06/2026 - Pagamento de Cartão de Crédito: R$ 3.000,00
+31/05/2026 - Transferência PIX Enviada: R$ 200,00
+29/05/2026 - Assinatura de Streaming: R$ 39,90
+
+========================================
+EMPRÉSTIMOS E FINANCIAMENTOS
+========================================
+
+Empréstimo Pessoal - Cliente: João Silva
+- Valor Contratado: R$ 20.000,00
+- Valor Devido: R$ 15.500,00
+- Parcela Mensal: R$ 850,00
+- Taxa de Juros: 2,5% ao mês
+- Próximo Vencimento: 20/06/2026
+
+Financiamento Veicular - Cliente: João Silva
+- Valor Financiado: R$ 50.000,00
+- Valor Devido: R$ 42.000,00
+- Parcela Mensal: R$ 1.200,00
+- Taxa de Juros: 1,8% ao mês
+- Próximo Vencimento: 10/06/2026
+
+========================================
+POLÍTICAS DO BANCO
+========================================
+
+Horário de Funcionamento:
+- Atendimento presencial: Segunda a Sexta, 10h às 16h
+- Atendimento telefônico: 24 horas por dia
+- Internet Banking: 24 horas por dia
+- App Mobile: 24 horas por dia
+
+Segurança:
+- Senha deve ter no mínimo 8 caracteres
+- Senha deve conter letras maiúsculas, minúsculas e números
+- Senha deve conter pelo menos um caractere especial
+- Troca de senha recomendada a cada 90 dias
+- Autenticação de dois fatores disponível
+
+Bloqueio de Conta:
+- Após 3 tentativas de senha incorreta
+- Conta bloqueada por 30 minutos
+- Desbloqueio através do app ou telefone
+
+========================================
+CANAL DE ATENDIMENTO POR IA
+========================================
+
+O assistente de IA do banco está disponível 24/7 para:
+- Consulta de saldos
+- Histórico de transações
+- Informações sobre tarifas
+- Pagamento de contas
+- Transferências
+- Dúvidas sobre produtos e serviços
+
+O assistente utiliza RAG (Retrieval-Augmented Generation) para fornecer respostas baseadas no manual do banco e nos dados do cliente.
