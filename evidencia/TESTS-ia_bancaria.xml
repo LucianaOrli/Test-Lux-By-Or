@@ -1,0 +1,226 @@
+<testsuite name="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" tests="8" errors="0" failures="0" skipped="0" time="0.030204" timestamp="2026-06-18T00:19:31.024717" hostname="localhost.localdomain">
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo da conta corrente" status="passed" time="0.021257">
+<system-out>
+<![CDATA[
+@scenario.begin
+  Cenário: Consulta de saldo da conta corrente
+    Dado que o assistente de IA está disponível ... passed in 0.020s
+    E o manual do banco contém informações da conta corrente do cliente João Silva ... passed in 0.000s
+    Quando eu pergunto ao assistente "Qual é o saldo da minha conta corrente?" ... passed in 0.000s
+    Então a IA deve responder com o saldo correto de R$ 5.450,00 ... passed in 0.000s
+    E a resposta deve ter fidelidade maior que 0.80 ... passed in 0.000s
+    E o trace da execução deve ser registrado no Langfuse ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+📝 Pergunta: Qual é o saldo da minha conta corrente?
+🤖 Resposta da IA: O saldo da sua conta corrente é de R$ 5.450,00. Seu limite de cheque especial é de R$ 2.000,00, totalizando R$ 7.450,00 disponíveis.
+✅ Valor correto verificado: R$ 5450.00
+
+📊 Score de Fidelidade: 0.83
+✅ Fidelidade aprovada: 0.83 > 0.80
+✅ Trace registrado no Langfuse para o cenário: Consulta de saldo da conta corrente
+
+]]>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo da conta poupança" status="passed" time="0.001218">
+<system-out>
+<![CDATA[
+@scenario.begin
+  Cenário: Consulta de saldo da conta poupança
+    Dado que o assistente de IA está disponível ... passed in 0.000s
+    E o manual do banco contém informações da conta poupança do cliente João Silva ... passed in 0.000s
+    Quando eu pergunto ao assistente "Qual é o saldo da minha poupança?" ... passed in 0.000s
+    Então a IA deve responder com o saldo correto de R$ 12.300,00 ... passed in 0.000s
+    E a resposta deve ter fidelidade maior que 0.80 ... passed in 0.000s
+    E o trace da execução deve ser registrado no Langfuse ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+📝 Pergunta: Qual é o saldo da minha poupança?
+🤖 Resposta da IA: O saldo da sua conta poupança é de R$ 12.300,00 com rendimento mensal de 0,5%.
+✅ Valor correto verificado: R$ 12300.00
+
+📊 Score de Fidelidade: 0.81
+✅ Fidelidade aprovada: 0.81 > 0.80
+✅ Trace registrado no Langfuse para o cenário: Consulta de saldo da conta poupança
+
+]]>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo disponível com limite" status="passed" time="0.001164">
+<system-out>
+<![CDATA[
+@scenario.begin
+  Cenário: Consulta de saldo disponível com limite
+    Dado que o assistente de IA está disponível ... passed in 0.000s
+    E o manual do banco contém informações sobre o limite de cheque especial ... passed in 0.000s
+    Quando eu pergunto ao assistente "Qual é o saldo disponível incluindo o limite?" ... passed in 0.000s
+    Então a IA deve responder com o saldo disponível de R$ 7.450,00 ... passed in 0.000s
+    E a resposta deve ter fidelidade maior que 0.80 ... passed in 0.000s
+    E o trace da execução deve ser registrado no Langfuse ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+📝 Pergunta: Qual é o saldo disponível incluindo o limite?
+🤖 Resposta da IA: Seu saldo disponível, incluindo o limite de cheque especial de R$ 2.000,00, é de R$ 7.450,00.
+✅ Valor correto verificado: R$ 7450.00
+
+📊 Score de Fidelidade: 0.83
+✅ Fidelidade aprovada: 0.83 > 0.80
+✅ Trace registrado no Langfuse para o cenário: Consulta de saldo disponível com limite
+
+]]>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo total de todas as contas" status="passed" time="0.001333">
+<system-out>
+<![CDATA[
+@scenario.begin
+  Cenário: Consulta de saldo total de todas as contas
+    Dado que o assistente de IA está disponível ... passed in 0.000s
+    E o manual do banco contains informações de todas as contas do cliente ... passed in 0.000s
+    Quando eu pergunto ao assistente "Qual é o saldo total de todas as minhas contas?" ... passed in 0.000s
+    Então a IA deve responder com o saldo total de R$ 42.750,00 ... passed in 0.000s
+    E a resposta deve ter fidelidade maior que 0.80 ... passed in 0.000s
+    E o trace da execução deve ser registrado no Langfuse ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+📝 Pergunta: Qual é o saldo total de todas as minhas contas?
+🤖 Resposta da IA: O saldo total de todas as suas contas é de R$ 42.750,00 (Conta Corrente: R$ 5.450,00, Poupança: R$ 12.300,00, Investimento: R$ 25.000,00).
+✅ Valor correto verificado: R$ 42750.00
+
+📊 Score de Fidelidade: 0.81
+✅ Fidelidade aprovada: 0.81 > 0.80
+✅ Trace registrado no Langfuse para o cenário: Consulta de saldo total de todas as contas
+
+]]>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo com informação incorreta" status="passed" time="0.00112">
+<system-out>
+<![CDATA[
+@scenario.begin
+  Cenário: Consulta de saldo com informação incorreta
+    Dado que o assistente de IA está disponível ... passed in 0.000s
+    E o manual do banco contém informações da conta corrente do cliente João Silva ... passed in 0.000s
+    E a IA responder com um valor diferente de R$ 5.450,00 ... passed in 0.000s
+    Então o teste deve falhar ... passed in 0.000s
+    E a fidelidade deve ser menor ou igual a 0.80 ... passed in 0.000s
+    E o trace da execução deve ser registrado no Langfuse ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+🤖 Resposta incorreta simulada: O saldo da sua conta corrente é de R$ 10.000,00.
+✅ Teste marcado para falhar conforme esperado
+
+📊 Score de Fidelidade: 0.31
+✅ Fidelidade reprovada conforme esperado: 0.31 <= 0.80
+... passed in 0.000s
+✅ Trace registrado no Langfuse para o cenário: Consulta de saldo com informação incorreta
+
+]]>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de limite do cartão de crédito" status="passed" time="0.001447">
+<system-out>
+<![CDATA[
+@scenario.begin
+  Cenário: Consulta de limite do cartão de crédito
+    Dado que o assistente de IA está disponível ... passed in 0.000s
+    E o manual do banco contém informações do cartão de crédito do cliente ... passed in 0.000s
+    Quando eu pergunto ao assistente "Qual é o limite disponível do meu cartão de crédito?" ... passed in 0.000s
+    Então a IA deve responder com o limite de R$ 15.000,00 ... passed in 0.000s
+    E a resposta deve ter fidelidade maior que 0.80 ... passed in 0.000s
+    E o trace da execução deve ser registrado no Langfuse ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+📝 Pergunta: Qual é o limite disponível do meu cartão de crédito?
+🤖 Resposta da IA: O limite disponível do seu cartão de crédito Visa Platinum é de R$ 15.000,00. Sua fatura atual é de R$ 3.450,00.
+✅ Valor correto verificado: R$ 15000.00
+
+📊 Score de Fidelidade: 0.88
+✅ Fidelidade aprovada: 0.88 > 0.80
+✅ Trace registrado no Langfuse para o cenário: Consulta de limite do cartão de crédito
+
+]]>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de fatura atual do cartão" status="passed" time="0.001398">
+<system-out>
+<![CDATA[
+@scenario.begin
+  Cenário: Consulta de fatura atual do cartão
+    Dado que o assistente de IA está disponível ... passed in 0.000s
+    E o manual do banco contém informações do cartão de crédito do cliente ... passed in 0.000s
+    Quando eu pergunto ao assistente "Qual é o valor da minha fatura atual do cartão?" ... passed in 0.000s
+    Então a IA deve responder com o valor de R$ 3.450,00 ... passed in 0.000s
+    E a resposta deve ter fidelidade maior que 0.80 ... passed in 0.000s
+    E o trace da execução deve ser registrado no Langfuse ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+📝 Pergunta: Qual é o valor da minha fatura atual do cartão?
+🤖 Resposta da IA: O valor da sua fatura atual do cartão de crédito é de R$ 3.450,00, com vencimento em 15/06/2026.
+✅ Valor correto verificado: R$ 3450.00
+
+📊 Score de Fidelidade: 0.83
+✅ Fidelidade aprovada: 0.83 > 0.80
+✅ Trace registrado no Langfuse para o cenário: Consulta de fatura atual do cartão
+
+]]>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de informações de empréstimo" status="passed" time="0.001267">
+<system-out>
+<![CDATA[
+@scenario.begin
+  Cenário: Consulta de informações de empréstimo
+    Dado que o assistente de IA está disponível ... passed in 0.000s
+    E o manual do banco contém informações de empréstimo do cliente ... passed in 0.000s
+    Quando eu pergunto ao assistente "Qual é o valor devido do meu empréstimo pessoal?" ... passed in 0.000s
+    Então a IA deve responder com o valor devido de R$ 15.500,00 ... passed in 0.000s
+    E a resposta deve ter fidelidade maior que 0.80 ... passed in 0.000s
+    E o trace da execução deve ser registrado no Langfuse ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+📝 Pergunta: Qual é o valor devido do meu empréstimo pessoal?
+🤖 Resposta da IA: O valor devido do seu empréstimo pessoal é de R$ 15.500,00, com parcela mensal de R$ 850,00.
+✅ Valor correto verificado: R$ 15500.00
+
+📊 Score de Fidelidade: 0.83
+✅ Fidelidade aprovada: 0.83 > 0.80
+✅ Trace registrado no Langfuse para o cenário: Consulta de informações de empréstimo
+
+]]>
+</system-out>
+</testcase>
+</testsuite>

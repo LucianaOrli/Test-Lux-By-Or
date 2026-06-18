@@ -1,0 +1,68 @@
+Funcionalidade: Assistente de IA Bancário - Consulta de Saldo com RAG # features/ia_bancaria.feature:2
+  Como cliente do banco
+  Quero consultar meu saldo através do assistente de IA
+  Para obter informações precisas sobre minhas contas baseadas no manual do banco
+  Cenário: Consulta de saldo da conta corrente                                     # features/ia_bancaria.feature:8
+    Dado que o assistente de IA está disponível                                    # features/steps/steps.py:257
+    E o manual do banco contém informações da conta corrente do cliente João Silva # features/steps/steps.py:266
+    Quando eu pergunto ao assistente "Qual é o saldo da minha conta corrente?"     # features/steps/steps.py:322
+    Então a IA deve responder com o saldo correto de R$ 5.450,00                   # features/steps/steps.py:348
+    E a resposta deve ter fidelidade maior que 0.80                                # features/steps/steps.py:448
+    E o trace da execução deve ser registrado no Langfuse                          # features/steps/steps.py:496
+
+  Cenário: Consulta de saldo da conta poupança                                     # features/ia_bancaria.feature:16
+    Dado que o assistente de IA está disponível                                    # features/steps/steps.py:257
+    E o manual do banco contém informações da conta poupança do cliente João Silva # features/steps/steps.py:276
+    Quando eu pergunto ao assistente "Qual é o saldo da minha poupança?"           # features/steps/steps.py:322
+    Então a IA deve responder com o saldo correto de R$ 12.300,00                  # features/steps/steps.py:363
+    E a resposta deve ter fidelidade maior que 0.80                                # features/steps/steps.py:448
+    E o trace da execução deve ser registrado no Langfuse                          # features/steps/steps.py:496
+
+  Cenário: Consulta de saldo disponível com limite                                   # features/ia_bancaria.feature:24
+    Dado que o assistente de IA está disponível                                      # features/steps/steps.py:257
+    E o manual do banco contém informações sobre o limite de cheque especial         # features/steps/steps.py:285
+    Quando eu pergunto ao assistente "Qual é o saldo disponível incluindo o limite?" # features/steps/steps.py:322
+    Então a IA deve responder com o saldo disponível de R$ 7.450,00                  # features/steps/steps.py:377
+    E a resposta deve ter fidelidade maior que 0.80                                  # features/steps/steps.py:448
+    E o trace da execução deve ser registrado no Langfuse                            # features/steps/steps.py:496
+
+  Cenário: Consulta de saldo total de todas as contas                                  # features/ia_bancaria.feature:32
+    Dado que o assistente de IA está disponível                                        # features/steps/steps.py:257
+    E o manual do banco contém informações de todas as contas do cliente               # features/steps/steps.py:294
+    Quando eu pergunto ao assistente "Qual é o saldo total de todas as minhas contas?" # features/steps/steps.py:322
+    Então a IA deve responder com o saldo total de R$ 42.750,00                        # features/steps/steps.py:391
+    E a resposta deve ter fidelidade maior que 0.80                                    # features/steps/steps.py:448
+    E o trace da execução deve ser registrado no Langfuse                              # features/steps/steps.py:496
+
+  Cenário: Consulta de saldo com informação incorreta                              # features/ia_bancaria.feature:40
+    Dado que o assistente de IA está disponível                                    # features/steps/steps.py:257
+    E o manual do banco contém informações da conta corrente do cliente João Silva # features/steps/steps.py:266
+    E a IA responder com um valor diferente de R$ 5.450,00                         # features/steps/steps.py:337
+    Então o teste deve falhar                                                      # features/steps/steps.py:486
+    E a fidelidade deve ser menor ou igual a 0.80                                  # features/steps/steps.py:467
+    E o trace da execução deve ser registrado no Langfuse                          # features/steps/steps.py:496
+
+  Cenário: Consulta de limite do cartão de crédito                                          # features/ia_bancaria.feature:48
+    Dado que o assistente de IA está disponível                                             # features/steps/steps.py:257
+    E o manual do banco contém informações do cartão de crédito do cliente                  # features/steps/steps.py:304
+    Quando eu pergunto ao assistente "Qual é o limite disponível do meu cartão de crédito?" # features/steps/steps.py:322
+    Então a IA deve responder com o limite de R$ 15.000,00                                  # features/steps/steps.py:405
+    E a resposta deve ter fidelidade maior que 0.80                                         # features/steps/steps.py:448
+    E o trace da execução deve ser registrado no Langfuse                                   # features/steps/steps.py:496
+
+  Cenário: Consulta de fatura atual do cartão                                          # features/ia_bancaria.feature:56
+    Dado que o assistente de IA está disponível                                        # features/steps/steps.py:257
+    E o manual do banco contém informações do cartão de crédito do cliente             # features/steps/steps.py:304
+    Quando eu pergunto ao assistente "Qual é o valor da minha fatura atual do cartão?" # features/steps/steps.py:322
+    Então a IA deve responder com o valor de R$ 3.450,00                               # features/steps/steps.py:419
+    E a resposta deve ter fidelidade maior que 0.80                                    # features/steps/steps.py:448
+    E o trace da execução deve ser registrado no Langfuse                              # features/steps/steps.py:496
+
+  Cenário: Consulta de informações de empréstimo                                        # features/ia_bancaria.feature:64
+    Dado que o assistente de IA está disponível                                         # features/steps/steps.py:257
+    E o manual do banco contém informações de empréstimo do cliente                     # features/steps/steps.py:313
+    Quando eu pergunto ao assistente "Qual é o valor devido do meu empréstimo pessoal?" # features/steps/steps.py:322
+    Então a IA deve responder com o valor devido de R$ 15.500,00                        # features/steps/steps.py:433
+    E a resposta deve ter fidelidade maior que 0.80                                     # features/steps/steps.py:448
+    E o trace da execução deve ser registrado no Langfuse                               # features/steps/steps.py:496
+
