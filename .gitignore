@@ -9,13 +9,10 @@ __pycache__/
 *.pyd
 .Python
 
-# Ignorar pastas geradas por engano na raiz
-/random/
-/string/
-/time/
-/pytest/
-/uuid/
+# Caches e artefatos de testes
 .pytest_cache/
+test-results/
+.playwright/
 
 # Variáveis de ambiente
 .env
@@ -28,17 +25,9 @@ __pycache__/
 *.swo
 *~
 
-# Relatórios e logs (opcional - comente se quiser versionar)
-# reports/
-# .behave/
-
-# OS
+# Sistema Operacional
 .DS_Store
 Thumbs.db
 
 # Logs
 *.log
-
-# Playwright (se usado no futuro)
-.playwright/
-test-results/
