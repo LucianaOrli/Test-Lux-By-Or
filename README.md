@@ -1,6 +1,6 @@
 # 🤖 Projeto LuxBYOr: Automação e Observabilidade para Assistente de IA Bancário
 
-# Visão Geral
+ Visão Geral
 
 Este projeto implementa uma estratégia de automação para validação de um Assistente de IA Bancário baseado em RAG (Retrieval-Augmented Generation).
 
@@ -8,7 +8,7 @@ A solução foi desenvolvida utilizando BDD (Behavior-Driven Development) com Gh
 
 Não é apenas verificar se uma resposta foi retornada, mas avaliar se ela é consistente, aderente ao contexto consultado e suficientemente confiável para cenários de negócio.
 
-# 🎯 Objetivo
+🎯 Objetivo
  A suíte de testes foi construída para validar:
  Precisão das informações apresentadas pela IA.
  Fidelidade das respostas baseada em rúbrica matemática
@@ -18,9 +18,9 @@ Não é apenas verificar se uma resposta foi retornada, mas avaliar se ela é co
  Rastreabilidade completa das execuções através do Langfuse.
 
 
-## 🏗️ Estrutura do Projeto
+Estrutura do Projeto
 
-```
+
 .
 ├── .github/                 # Configurações do GitHub (CI/CD, Issues)
 ├── docs/                    # Documentação e evidências
