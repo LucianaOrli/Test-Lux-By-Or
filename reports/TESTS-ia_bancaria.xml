@@ -1,4 +1,6 @@
-<testsuite name="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" tests="8" errors="0" failures="0" skipped="0" time="0.030204" timestamp="2026-06-18T00:19:31.024717" hostname="localhost.localdomain"><testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo da conta corrente" status="passed" time="0.021257"><system-out>
+<testsuite name="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" tests="8" errors="0" failures="0" skipped="0" time="0.030204" timestamp="2026-06-18T00:19:31.024717" hostname="localhost.localdomain">
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo da conta corrente" status="passed" time="0.021257">
+<system-out>
 <![CDATA[
 @scenario.begin
   Cenário: Consulta de saldo da conta corrente
@@ -20,11 +22,13 @@ Captured stdout:
 
 📊 Score de Fidelidade: 0.83
 ✅ Fidelidade aprovada: 0.83 > 0.80
-⚠️ Erro ao criar trace no Langfuse: 'Langfuse' object has no attribute 'create_trace'
 ✅ Trace registrado no Langfuse para o cenário: Consulta de saldo da conta corrente
 
 ]]>
-</system-out></testcase><testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo da conta poupança" status="passed" time="0.001218"><system-out>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo da conta poupança" status="passed" time="0.001218">
+<system-out>
 <![CDATA[
 @scenario.begin
   Cenário: Consulta de saldo da conta poupança
@@ -46,11 +50,13 @@ Captured stdout:
 
 📊 Score de Fidelidade: 0.81
 ✅ Fidelidade aprovada: 0.81 > 0.80
-⚠️ Erro ao criar trace no Langfuse: 'Langfuse' object has no attribute 'create_trace'
 ✅ Trace registrado no Langfuse para o cenário: Consulta de saldo da conta poupança
 
 ]]>
-</system-out></testcase><testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo disponível com limite" status="passed" time="0.001164"><system-out>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo disponível com limite" status="passed" time="0.001164">
+<system-out>
 <![CDATA[
 @scenario.begin
   Cenário: Consulta de saldo disponível com limite
@@ -72,16 +78,18 @@ Captured stdout:
 
 📊 Score de Fidelidade: 0.83
 ✅ Fidelidade aprovada: 0.83 > 0.80
-⚠️ Erro ao criar trace no Langfuse: 'Langfuse' object has no attribute 'create_trace'
 ✅ Trace registrado no Langfuse para o cenário: Consulta de saldo disponível com limite
 
 ]]>
-</system-out></testcase><testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo total de todas as contas" status="passed" time="0.001333"><system-out>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo total de todas as contas" status="passed" time="0.001333">
+<system-out>
 <![CDATA[
 @scenario.begin
   Cenário: Consulta de saldo total de todas as contas
     Dado que o assistente de IA está disponível ... passed in 0.000s
-    E o manual do banco contém informações de todas as contas do cliente ... passed in 0.000s
+    E o manual do banco contains informações de todas as contas do cliente ... passed in 0.000s
     Quando eu pergunto ao assistente "Qual é o saldo total de todas as minhas contas?" ... passed in 0.000s
     Então a IA deve responder com o saldo total de R$ 42.750,00 ... passed in 0.000s
     E a resposta deve ter fidelidade maior que 0.80 ... passed in 0.000s
@@ -98,11 +106,13 @@ Captured stdout:
 
 📊 Score de Fidelidade: 0.81
 ✅ Fidelidade aprovada: 0.81 > 0.80
-⚠️ Erro ao criar trace no Langfuse: 'Langfuse' object has no attribute 'create_trace'
 ✅ Trace registrado no Langfuse para o cenário: Consulta de saldo total de todas as contas
 
 ]]>
-</system-out></testcase><testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo com informação incorreta" status="passed" time="0.00112"><system-out>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de saldo com informação incorreta" status="passed" time="0.00112">
+<system-out>
 <![CDATA[
 @scenario.begin
   Cenário: Consulta de saldo com informação incorreta
@@ -123,11 +133,14 @@ Captured stdout:
 
 📊 Score de Fidelidade: 0.31
 ✅ Fidelidade reprovada conforme esperado: 0.31 <= 0.80
-⚠️ Erro ao criar trace no Langfuse: 'Langfuse' object has no attribute 'create_trace'
+... passed in 0.000s
 ✅ Trace registrado no Langfuse para o cenário: Consulta de saldo com informação incorreta
 
 ]]>
-</system-out></testcase><testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de limite do cartão de crédito" status="passed" time="0.001447"><system-out>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de limite do cartão de crédito" status="passed" time="0.001447">
+<system-out>
 <![CDATA[
 @scenario.begin
   Cenário: Consulta de limite do cartão de crédito
@@ -149,11 +162,13 @@ Captured stdout:
 
 📊 Score de Fidelidade: 0.88
 ✅ Fidelidade aprovada: 0.88 > 0.80
-⚠️ Erro ao criar trace no Langfuse: 'Langfuse' object has no attribute 'create_trace'
 ✅ Trace registrado no Langfuse para o cenário: Consulta de limite do cartão de crédito
 
 ]]>
-</system-out></testcase><testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de fatura atual do cartão" status="passed" time="0.001398"><system-out>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de fatura atual do cartão" status="passed" time="0.001398">
+<system-out>
 <![CDATA[
 @scenario.begin
   Cenário: Consulta de fatura atual do cartão
@@ -175,11 +190,13 @@ Captured stdout:
 
 📊 Score de Fidelidade: 0.83
 ✅ Fidelidade aprovada: 0.83 > 0.80
-⚠️ Erro ao criar trace no Langfuse: 'Langfuse' object has no attribute 'create_trace'
 ✅ Trace registrado no Langfuse para o cenário: Consulta de fatura atual do cartão
 
 ]]>
-</system-out></testcase><testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de informações de empréstimo" status="passed" time="0.001267"><system-out>
+</system-out>
+</testcase>
+<testcase classname="ia_bancaria.Assistente de IA Bancário - Consulta de Saldo com RAG" name="Consulta de informações de empréstimo" status="passed" time="0.001267">
+<system-out>
 <![CDATA[
 @scenario.begin
   Cenário: Consulta de informações de empréstimo
@@ -201,8 +218,9 @@ Captured stdout:
 
 📊 Score de Fidelidade: 0.83
 ✅ Fidelidade aprovada: 0.83 > 0.80
-⚠️ Erro ao criar trace no Langfuse: 'Langfuse' object has no attribute 'create_trace'
 ✅ Trace registrado no Langfuse para o cenário: Consulta de informações de empréstimo
 
 ]]>
-</system-out></testcase></testsuite>
+</system-out>
+</testcase>
+</testsuite>
