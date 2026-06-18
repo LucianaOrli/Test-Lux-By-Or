@@ -1,28 +1,35 @@
-name: Smart Monkey Tests
+name: Pipeline de Testes - IA Bancaria RAG
 
 on:
   push:
     branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout do Código
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Configurar Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Instalar Dependencias
+      - name: Instalar Dependências
         run: |
           python -m pip install --upgrade pip
-          pip install behave pytest playwright pytest-playwright
+          pip install behave pytest playwright pytest-playwright langfuse
 
-      - name: Instalar Navegadores Playwright
-        run: playwright install
+      - name: Instalar Navegadores do Playwright
+        run: playwright install chromium
 
-      - name: Rodar Framework
+      - name: Rodar Framework via Orquestrador
+        env:
+          LANGFUSE_PUBLIC_KEY: ${{ secrets.LANGFUSE_PUBLIC_KEY || 'pk-lf-mock' }}
+          LANGFUSE_SECRET_KEY: ${{ secrets.LANGFUSE_SECRET_KEY || 'sk-lf-mock' }}
+          LANGFUSE_HOST: "https://cloud.langfuse.com"
         run: python orchestrator.py
