@@ -17,29 +17,28 @@ Não é apenas verificar se uma resposta foi retornada, mas avaliar se ela é co
  Consistência dos resultados gerados.
  Rastreabilidade completa das execuções através do Langfuse.
 
+## 📂 Estrutura do Projeto
 
-Estrutura do Projeto
-
-
+```text
 .
-├── .github/                 # Configurações do GitHub (CI/CD, Issues)
-├── docs/                    # Documentação e evidências
-│   ├── evidencias/          # Evidências de testes (screenshots, logs)
-│   └── relatorios/          # Relatórios de execução
-├── features/                # Arquivos Gherkin (.feature)
-│   ├── ia_bancaria.feature  # Cenários de teste
-│   └── steps/               # Implementação dos steps
-│       ├── steps.py         # Lógica dos steps em Python
-│       └── __init__.py
-├── reports/                 # Relatórios gerados pelo Behave
-├── .behave/                 # Cache do Behave
-├── .env.example             # Exemplo de variáveis de ambiente
-├── .gitignore               # Arquivos ignorados pelo Git
-├── behave.ini               # Configuração do Behave
-├── conftest.py              # Configuração de hooks do Behave
-├── manual_banco.txt         # Base de conhecimento RAG
-├── requirements.txt         # Dependências Python
-└── README.md                # Este arquivo
+├── .github/                 # Configurações do GitHub (CI/CD, Issues)
+├── docs/                    # Documentação e evidências
+│   ├── evidencias/          # Evidências de testes (screenshots, logs)
+│   └── relatorios/          # Relatórios de execução
+├── features/                # Arquivos Gherkin (.feature)
+│   ├── ia_bancaria.feature  # Cenários de teste 
+│   └── steps/               # Implementação dos steps
+│       ├── steps.py         # Lógica dos steps em Python
+│       └── __init__.py
+├── reports/                 # Relatórios gerados pelo Behave
+├── .behave/                 # Cache do Behave
+├── .env.example             # Exemplo de variáveis de ambiente
+├── .gitignore               # Arquivos ignorados pelo Git
+├── behave.ini               # Configuração do Behave
+├── conftest.py              # Configuração de hooks do Behave
+├── manual_banco.txt         # Base de conhecimento RAG
+├── requirements.txt         # Dependências Python
+└── README.md                # Este arquivo
 
 
  Tecnologias Utilizadas
