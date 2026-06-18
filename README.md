@@ -1,16 +1,22 @@
-# 🤖 Projeto de Automação QA Sênior - Assistente de IA Bancário
+# 🤖 Projeto LuxBYOr: Automação e Observabilidade para Assistente de IA Bancário
 
-## 📋 Visão Geral
+# Visão Geral
 
-Projeto de automação de testes de nível Sênior para validação de um Assistente de IA Bancário utilizando RAG (Retrieval-Augmented Generation). O projeto utiliza Behavior-Driven Development (BDD) com Gherkin, Python, Behave e integração com Langfuse para tracing e observabilidade.
+Este projeto implementa uma estratégia de automação para validação de um Assistente de IA Bancário baseado em RAG (Retrieval-Augmented Generation).
 
-## 🎯 Objetivo
+A solução foi desenvolvida utilizando BDD (Behavior-Driven Development) com Gherkin, Python e Behave, incorporando mecanismos de avaliação automática da qualidade das respostas e observabilidade através do Langfuse.
 
-Validar as respostas do Assistente de IA Bancário garantindo:
-- Precisão nas informações fornecidas
-- Fidelidade das respostas baseada em rúbrica matemática
-- Observabilidade através de traces no Langfuse
-- Cobertura de cenários de sucesso e falha
+Não é apenas verificar se uma resposta foi retornada, mas avaliar se ela é consistente, aderente ao contexto consultado e suficientemente confiável para cenários de negócio.
+
+# 🎯 Objetivo
+ A suíte de testes foi construída para validar:
+ Precisão das informações apresentadas pela IA.
+ Fidelidade das respostas baseada em rúbrica matemática
+ Observabilidade através de traces no Langfuse
+ Comportamento em cenários positivos e negativos /  Cobertura de cenários de sucesso e falha.
+ Consistência dos resultados gerados.
+ Rastreabilidade completa das execuções através do Langfuse.
+
 
 ## 🏗️ Estrutura do Projeto
 
@@ -34,76 +40,45 @@ Validar as respostas do Assistente de IA Bancário garantindo:
 ├── manual_banco.txt         # Base de conhecimento RAG
 ├── requirements.txt         # Dependências Python
 └── README.md                # Este arquivo
-```
 
-## 🛠️ Tecnologias Utilizadas
+ Tecnologias Utilizadas
 
-- **Python 3.8+**: Linguagem principal
-- **Behave**: Framework BDD para Python
-- **Gherkin**: Linguagem para definição de cenários
-- **Langfuse**: Plataforma de observabilidade para LLMs
-- **python-dotenv**: Gerenciamento de variáveis de ambiente
+ **Python 3.8+**: Linguagem principal pip (gerenciador de pacotes Python)
+ **Behave**: Framework BDD para Python
+ **Gherkin**: Linguagem para definição de cenários
+ **Langfuse**: Plataforma de observabilidade para LLMs
+ **python-dotenv**: Gerenciamento de variáveis de ambiente
 
-## 📦 Instalação
+⚙️ Arquitetura da Solução
 
-### Pré-requisitos
+| Camada | Tecnologia | Responsabilidade |
+| :--- | :--- | :--- |
+| **Especificação** | Gherkin | Definição dos cenários de negócio. |
+| **Orquestração** | Behave | Execução do ciclo de vida BDD. |
+| **Core Engine** | Python 3 | Algoritmo de validação e parse de dados. |
+| **Observabilidade** | Langfuse SDK | Captura de traces em tempo real. |
+| **Data Source** | Base RAG Local | Fonte de dados do assistente (`manual_banco.txt`). |
 
-- Python 3.8 ou superior
-- pip (gerenciador de pacotes Python)
-- Git
 
-### Passo a Passo
+ Executar suíte completa
+ behave
 
-1. **Clone o repositório**
-   ```bash
-   git clone <URL-DO-REPOSITORIO>
-   cd Test-Lux-By-Or
-   ```
+ Gerar relatórios estruturados (JUnit/XML)
+ behave --junit --junit-directory reports/
 
-2. **Crie um ambiente virtual**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Linux/Mac
-   # ou
-   venv\Scripts\activate  # Windows
-   ```
+🚀 Estratégia de Testes
+Os cenários cobrem operações bancárias comuns, incluindo:
 
-3. **Instale as dependências**
-   ```bash
-   pip install -r requirements.txt
-   ```
+Consulta de saldo.
+Consulta de limite de crédito.
+Consulta de fatura.
+Informações de empréstimos.
+Validação de respostas incorretas.
+Tratamento de cenários de falha.
 
-4. **Configure as variáveis de ambiente**
-   ```bash
-   cp .env.example .env
-   # Edite o arquivo .env com suas credenciais do Langfuse
-   ```
+Além da validação funcional, cada execução mede a qualidade da resposta gerada pela IA.
 
-## 🚀 Execução dos Testes
-
-### Executar todos os testes
-```bash
-behave
-```
-
-### Executar cenário específico
-```bash
-behave features/ia_bancaria.feature:8
-```
-
-### Executar com formato JSON
-```bash
-behave --format json.pretty --out reports/report.json
-```
-
-### Executar com formato HTML
-```bash
-behave --format html --out reports/report.html
-```
-
-## 📊 Cenários de Teste
-
-O projeto contém 8 cenários de teste:
+Cenários de Teste - O projeto contém 8 cenários de teste:
 
 1. **Consulta de saldo da conta corrente** - Valida saldo básico
 2. **Consulta de saldo da conta poupança** - Valida saldo de poupança
@@ -114,67 +89,7 @@ O projeto contém 8 cenários de teste:
 7. **Consulta de fatura atual do cartão** - Valida fatura do cartão
 8. **Consulta de informações de empréstimo** - Valida dados de empréstimo
 
-## 🧮 Rúbrica de Fidelidade
-
-A fidelidade das respostas da IA é calculada usando uma rúbrica matemática:
-
-```
-Score de Fidelidade = (Precisão × 60%) + (Contexto × 25%) + (Formatação × 15%)
-```
-
-- **Precisão (60%)**: Proximidade do valor numérico extraído com o valor esperado
-- **Contexto (25%)**: Presença de palavras-chave relevantes na resposta
-- **Formatação (15%)**: Formatação correta (R$, vírgulas, pontos)
-
-**Critério de Aprovação**: Score > 0.80
-
-## 🔍 Tracing com Langfuse
-
-Todos os testes registram traces no Langfuse para:
-- Monitoramento de execução
-- Análise de performance
-- Debug de problemas
-- Auditoria de resultados
-
-**Configuração**:
-```python
-LANGFUSE_PUBLIC_KEY=pk-lf-...
-LANGFUSE_SECRET_KEY=sk-lf-...
-LANGFUSE_HOST=https://cloud.langfuse.com
-```
-
-## 📝 Evidências
-
-As evidências dos testes são armazenadas em:
-- `docs/evidencias/` - Screenshots, logs, artefatos
-- `docs/relatorios/` - Relatórios consolidados
-- `reports/` - Relatórios gerados automaticamente pelo Behave
-
-## 🧪 Checklist Pré-Execução
-
-Antes de executar os testes, verifique:
-
-- [ ] Ambiente virtual ativado
-- [ ] Dependências instaladas (`pip install -r requirements.txt`)
-- [ ] Variáveis de ambiente configuradas (`.env`)
-- [ ] Arquivo `manual_banco.txt` presente na raiz
-- [ ] Credenciais do Langfuse válidas
-- [ ] Conexão com internet (para Langfuse)
-
-## 🐛 Troubleshooting
-
-### Erro: ModuleNotFoundError: No module named 'langfuse.decorators'
-**Solução**: O projeto usa o cliente padrão do Langfuse, não decorators. Verifique se está usando `from langfuse import Langfuse`.
-
-### Erro: FileNotFoundError: manual_banco.txt
-**Solução**: Verifique se o arquivo `manual_banco.txt` está na raiz do projeto.
-
-### Erro: Fidelidade baixa (< 0.80)
-**Solução**: Ajuste a rúbrica de fidelidade em `features/steps/steps.py` ou verifique a resposta da IA.
-
-## 📈 Status dos Testes
-
-**Última Execução**: 17/06/2026
+Status dos Testes
 
 | Cenário | Status | Fidelidade |
 |---------|--------|------------|
@@ -187,30 +102,43 @@ Antes de executar os testes, verifique:
 | Fatura Cartão | ✅ Passou | 0.90 |
 | Empréstimo | ✅ Passou | 0.89 |
 
-**Total**: 8/8 cenários passando
+  **Total**: 8/8 cenários passando
 
-## 👥 Contribuição
+  Evidências dos testes são armazenadas em:
 
-Para contribuir com o projeto:
+ ` docs/evidencias/` - Screenshots, logs, artefatos
+ ` docs/relatorios/` - Relatórios consolidados
+  `reports/` - Relatórios gerados automaticamente pelo Behave
 
-1. Faça um fork do repositório
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -m 'Add nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
 
-## 📄 Licença
+  📝  Rúbrica de Fidelidade
+   A fidelidade das respostas da IA é calculada usando uma rúbrica matemática:
+   Score de Fidelidade = (Precisão × 60%) + (Contexto × 25%) + (Formatação × 15%)
 
-Este projeto é para fins educacionais e de demonstração.
+ **Precisão (60%)**: Proximidade do valor numérico extraído com o valor esperado
+ **Contexto (25%)**: Presença de palavras-chave relevantes na resposta
+ **Formatação (15%)**: Formatação correta (R$, vírgulas, pontos)
+ **Critério de Aprovação**: Score > 0.80
 
-## 👤 Autor
+🔍 Tracing com Langfuse
+   Todos os testes registram traces no Langfuse para:
+   Monitoramento de execução
+   Análise de performance
+   Debug de problemas
+   Auditoria de resultados
 
-**QA Sênior** - Automação de Testes com IA
 
-## 📞 Suporte
+  🐛 Troubleshooting
 
-Para dúvidas ou problemas, abra uma issue no repositório.
+ Erro: ModuleNotFoundError: No module named 'langfuse.decorators'
+**Solução**: O projeto usa o cliente padrão do Langfuse, não decorators. Verifique se está usando `from langfuse import Langfuse`.
 
----
+Erro: FileNotFoundError: manual_banco.txt
+**Solução**: Verifique se o arquivo `manual_banco.txt` está na raiz do projeto.
 
-**Última Atualização**: 17/06/2026
+Erro: Fidelidade baixa (< 0.80)
+**Solução**: Ajuste a rúbrica de fidelidade em `features/steps/steps.py` ou verifique a resposta da IA.
+
+
+
+
